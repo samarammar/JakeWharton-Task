@@ -13,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jakewharton.repos.R
+import com.jakewharton.repos.data.database.model.RepoEntity
 import com.jakewharton.repos.data.model.RepoReponce
 import com.jakewharton.repos.databinding.ActivityReposListBinding
 import com.jakewharton.repos.presentation.base.BaseActivity
@@ -42,7 +43,7 @@ class ReposListActivity :  BaseActivity<ActivityReposListBinding>()
         }
     }
 
-    private fun onListItemClick(repo:RepoReponce) {
+    private fun onListItemClick(repo: RepoEntity) {
 //        val intent = Intent(
 //            this,
 //            R::class.java
@@ -83,8 +84,8 @@ class ReposListActivity :  BaseActivity<ActivityReposListBinding>()
         Timber.d("showerror")
 
         reposListUiState.run {
-            val flowOfLists: Flow<List<RepoReponce>> = repos
-            val flatList: List<RepoReponce> = flowOfLists.flattenToList()
+            val flowOfLists: Flow<List<RepoEntity>> = repos
+            val flatList: List<RepoEntity> = flowOfLists.flattenToList()
             adaptercompet.update(flatList)
 
 

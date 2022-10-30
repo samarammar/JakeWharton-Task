@@ -58,10 +58,10 @@
         />
 
     <TextView
-        android:id="@+id/tv_owner_name"
+        android:id="@+id/tv_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/repo_owner_name"
+        android:text="@string/repo_full_name"
         android:textStyle="bold"
         android:textSize="16dp"
         android:layout_marginTop="5dp"
@@ -70,16 +70,16 @@
         />
 
     <TextView
-        android:id="@+id/tv_owner_name_value"
+        android:id="@+id/tv_full_name_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/repo_owner_name"
+        tools:text="@string/repo_full_name"
         android:textSize="16dp"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_repo_url_value"
-        app:layout_constraintStart_toEndOf="@+id/tv_owner_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_full_name"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

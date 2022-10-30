@@ -3,4 +3,5 @@
     <string name="repo_name">Repo Name:</string>
     <string name="repo_url">Repo Url:</string>
     <string name="repo_owner_name">Repo Owner Name:</string>
+    <string name="repo_full_name">Repo Full Name:</string>
 </resources>

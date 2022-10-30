@@ -6,21 +6,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.jakewharton.repos.data.database.model.RepoEntity
 import com.jakewharton.repos.data.model.RepoReponce
 import com.jakewharton.repos.databinding.ItemRepoBinding
 
 class ReposAdapter constructor(
-    private val context: Context, private val onItemClicked: (repo:RepoReponce) -> Unit
+    private val context: Context, private val onItemClicked: (repo:RepoEntity) -> Unit
 ) : RecyclerView.Adapter<ReposAdapter.RepoViewHolder>() {
 
 
-    private var repoItem: ArrayList<RepoReponce> = ArrayList()
+    private var repoItem: ArrayList<RepoEntity> = ArrayList()
 
 
     inner class RepoViewHolder(binding: ItemRepoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        val ownerName = binding.tvOwnerNameValue
+        val fullName = binding.tvFullNameValue
         val repoName = binding.tvRepoNameValue
         val repoUrl = binding.tvRepoUrlValue
         val container=binding.containerView
@@ -36,7 +37,7 @@ class ReposAdapter constructor(
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
 
         repoItem[position].also {
-            holder.ownerName.text = it.owner.login
+            holder.fullName.text = it.full_name
             holder.repoUrl.text = it.url
             holder.repoName.text = it.name
 
@@ -49,7 +50,7 @@ class ReposAdapter constructor(
     override fun getItemCount(): Int = repoItem.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(product: List<RepoReponce>) {
+    fun update(product: List<RepoEntity>) {
         repoItem.run {
             clear()
             addAll(product)

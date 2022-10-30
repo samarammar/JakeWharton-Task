@@ -1,20 +1,22 @@
-package com.jakewharton.repos.data.source.network
+package com.jakewharton.repos.data.source.local
 
-import com.jakewharton.repos.data.api.ApiService
+import com.jakewharton.repos.data.database.dao.RepoDao
 import com.jakewharton.repos.data.database.model.RepoEntity
+import com.jakewharton.repos.data.mapper.RepoEntityMapper.to
 import com.jakewharton.repos.data.model.RepoReponce
 import com.jakewharton.repos.data.source.EntityData
 import javax.inject.Inject
 
-class NetworkEntityData @Inject constructor(
-    private val apiService: ApiService
+class LocalEntityData @Inject constructor(
+    private val repoDao: RepoDao
 ) : EntityData {
     override suspend fun getRepos(): List<RepoEntity> {
-        return apiService.getRepos()
+
+        return repoDao.getRepos()
     }
 
     override suspend fun AddRepos(list: List<RepoEntity>) {
-
+        repoDao.insert(list)
     }
 
 
