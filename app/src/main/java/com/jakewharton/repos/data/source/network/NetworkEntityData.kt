@@ -10,7 +10,8 @@ class NetworkEntityData @Inject constructor(
     private val apiService: ApiService
 ) : EntityData {
     override suspend fun getRepos(): List<RepoEntity> {
-        return apiService.getRepos()
+        return apiService.
+        getRepos()
     }
 
     override suspend fun AddRepos(list: List<RepoEntity>) {
