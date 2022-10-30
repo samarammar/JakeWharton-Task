@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="repo_name">Repo Name:</string>
+    <string name="repo_url">Repo Url:</string>
+    <string name="repo_owner_name">Repo Owner Name:</string>
+</resources>

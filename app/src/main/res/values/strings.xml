@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Repos</string>
+
+    <string name="error_not_found">Error: Not Found</string>
+    <string name="error_something_went_wrong">Something went wrong</string>
+    <string name="repo_name">Repo Name:</string>
+    <string name="repo_url">Repo Url:</string>
+    <string name="repo_owner_name">Repo Owner Name:</string>
+</resources>
