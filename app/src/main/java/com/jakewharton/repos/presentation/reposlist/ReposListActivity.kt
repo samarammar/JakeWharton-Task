@@ -85,10 +85,10 @@ class ReposListActivity :  BaseActivity<ActivityReposListBinding>()
     private fun onListItemClick(repo: RepoEntity) {
 //        val intent = Intent(
 //            this,
-//            R::class.java
+//            RepoDetailsActivty::class.java
 //        )
 //
-//        intent.putExtra(PRODUCTS_OBJ, product)
+//        intent.putExtra("REPO_OBJ", repo)
 //        startActivity(intent)
     }
 

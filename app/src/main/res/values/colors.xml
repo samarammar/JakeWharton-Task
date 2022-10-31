@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grean_blue">#0097A7</color>
     <color name="_blue">#1BCBDD</color>
+    <color name="challenges_card_stroke_color">#ECEEED</color>
+
 </resources>
