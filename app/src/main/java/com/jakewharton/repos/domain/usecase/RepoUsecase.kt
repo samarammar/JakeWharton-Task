@@ -10,8 +10,8 @@ class RepoUsecase @Inject constructor(
     private val repoRepository: ReposRepository
 ) {
 
-    suspend fun execute(): Flow<List<RepoEntity>> {
-        return repoRepository.getRepos()
+    suspend fun execute(pageNumber: Int): Flow<List<RepoEntity>> {
+        return repoRepository.getRepos(pageNumber)
     }
 
 }

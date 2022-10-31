@@ -20,10 +20,10 @@ class RepositoryImpl @Inject constructor(
 ) : ReposRepository {
 
 
-    override suspend fun getRepos(): Flow<List<RepoEntity>> {
+    override suspend fun getRepos(pageNumber: Int): Flow<List<RepoEntity>> {
         return flow{
             try {
-                val data= factory.create(Source.NETWORK).getRepos()
+                val data= factory.create(Source.NETWORK).getRepos(pageNumber)
 
                 factory.create(Source.LOCAL).AddRepos(data)
 
@@ -32,7 +32,7 @@ class RepositoryImpl @Inject constructor(
 
                 try {
                     // Get data from LocalDataSource
-                    val localData = factory.create(Source.LOCAL).getRepos()
+                    val localData = factory.create(Source.LOCAL).getRepos(pageNumber)
                     // Emit data
                     emit(localData)
                 } catch (ex1: Exception) {

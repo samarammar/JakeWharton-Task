@@ -9,9 +9,12 @@ import javax.inject.Inject
 class NetworkEntityData @Inject constructor(
     private val apiService: ApiService
 ) : EntityData {
-    override suspend fun getRepos(): List<RepoEntity> {
-        return apiService.
-        getRepos()
+    override suspend fun getRepos(pageNumber: Int): List<RepoEntity> {
+//        Pager(PagingConfig(pageSize = 1)) {
+//            ReposRemoteMediator(database, apiService)
+//
+//        }.flow
+        return apiService.getRepos(pageNumber)
     }
 
     override suspend fun AddRepos(list: List<RepoEntity>) {

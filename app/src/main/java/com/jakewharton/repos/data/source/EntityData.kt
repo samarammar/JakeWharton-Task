@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface EntityData {
-    suspend fun getRepos(): List<RepoEntity>
+    suspend fun getRepos(pageNumber: Int): List<RepoEntity>
     suspend fun AddRepos(list:List<RepoEntity>)
 }

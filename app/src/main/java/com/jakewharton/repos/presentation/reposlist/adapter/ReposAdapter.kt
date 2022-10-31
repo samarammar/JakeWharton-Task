@@ -52,7 +52,6 @@ class ReposAdapter constructor(
     @SuppressLint("NotifyDataSetChanged")
     fun update(product: List<RepoEntity>) {
         repoItem.run {
-            clear()
             addAll(product)
             notifyDataSetChanged()
 

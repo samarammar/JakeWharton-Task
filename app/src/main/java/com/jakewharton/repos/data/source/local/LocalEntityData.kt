@@ -10,10 +10,12 @@ import javax.inject.Inject
 class LocalEntityData @Inject constructor(
     private val repoDao: RepoDao
 ) : EntityData {
-    override suspend fun getRepos(): List<RepoEntity> {
+    override suspend fun getRepos(pageNumber: Int): List<RepoEntity> {
 
         return repoDao.getRepos()
     }
+
+
 
     override suspend fun AddRepos(list: List<RepoEntity>) {
         repoDao.insert(list)

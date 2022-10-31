@@ -22,6 +22,7 @@ constructor(
 
     private val _uiState = MutableStateFlow<ReposUiState>(ReposUiState.Loading)
     val uiState: StateFlow<ReposUiState> = _uiState
+    var reposPage = 1
 
     fun getReposList() {
         _uiState.value = ReposUiState.Loading
@@ -29,9 +30,10 @@ constructor(
         viewModelScope.launch(coroutineDispatcherProvider.IO()) {
             try {
 
-                val result = repoUsecase.execute()
+                val result = repoUsecase.execute(reposPage)
 
                 _uiState.value = ReposUiState.Loaded(ReposListUiState(result))
+                reposPage++
             } catch (error: Exception) {
                 _uiState.value = ReposUiState.Error(ExceptionParser.getMessage(error))
             }
